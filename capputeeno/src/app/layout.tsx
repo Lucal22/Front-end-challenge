@@ -1,4 +1,3 @@
-import StyledComponentsRegistry from '@/lib/registry'
 import './globals.css'
 
 export const metadata = {
@@ -13,8 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
- <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-     </html>
+      <body>{children}</body>
+    </html>
 
   )
 }
