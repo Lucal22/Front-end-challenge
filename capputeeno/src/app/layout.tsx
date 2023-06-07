@@ -1,9 +1,16 @@
+import { Saira } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
 
 export const metadata = {
-  default: 'Capputeeno',
+  title: 'Capputeeno',
   description: 'Experimente o gosto de comprar com qualidade',
 }
+
+export const saira = Saira({
+  weight: ['400','500'],
+  subsets: ['latin']
+})
 
 export default function RootLayout({
   children,
@@ -12,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body>{children}</body>
+      <body className={saira.className}>
+      <Header />
+      {children}
+      </body>
     </html>
 
   )

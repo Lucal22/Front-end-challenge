@@ -1,8 +1,10 @@
-import Test from "@/components/Teste.tsx";
-
+import Container from "@/components/container";
+import Filters from "@/components/Filters";
 
 export default function Home() {
   return (
-    <Test />
+    <Container>
+      <Filters />
+    </Container>
   )
 }
