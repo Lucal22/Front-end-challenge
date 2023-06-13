@@ -3,13 +3,13 @@
 import React from 'react';
 import * as Styled from './styles';
 import Selectors from './components/Selectors';
-import Organizers from './components/Organizers';
+import Priority from './components/Priority';
 
 export default function Filters() {
   return (
     <Styled.Container>
       <Selectors />
-      <Organizers />
+      <Priority />
     </Styled.Container>
   );
 }

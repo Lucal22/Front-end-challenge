@@ -1,6 +1,7 @@
 import { Saira } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import { FilterContextProvider } from '@/context/filter-context'
 
 export const metadata = {
   title: 'Capputeeno',
@@ -20,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body className={saira.className}>
-      <Header />
-      {children}
+        <FilterContextProvider>
+          <Header />
+          {children}
+      </FilterContextProvider>
       </body>
     </html>
 
