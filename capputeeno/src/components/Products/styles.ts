@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    color: red;
-  `}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;

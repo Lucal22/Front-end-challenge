@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import Container from "@/components/container";
-import Filters from "@/components/Filters";
-import Products from "@/components/Products";
-import { QueryClient, QueryClientProvider } from "react-query";
+import Container from '@/components/container';
+import Filters from '@/components/Filters';
+import Products from '@/components/Products';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 export default function Home() {
   const client = new QueryClient();
 
   return (
     <QueryClientProvider client={client}>
-    <Container>
-      <Filters />
-      <Products />
-    </Container>
+      <Container>
+        <Filters />
+        <Products />
+      </Container>
     </QueryClientProvider>
-  )
+  );
 }

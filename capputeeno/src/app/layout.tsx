@@ -1,22 +1,22 @@
-import { Saira } from 'next/font/google'
-import './globals.css'
-import Header from '@/components/Header'
-import { FilterContextProvider } from '@/context/filter-context'
+import { Saira } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/Header';
+import { FilterContextProvider } from '@/context/filter-context';
 
 export const metadata = {
   title: 'Capputeeno',
   description: 'Experimente o gosto de comprar com qualidade',
-}
+};
 
 export const saira = Saira({
-  weight: ['400','500'],
-  subsets: ['latin']
-})
+  weight: ['400', '500'],
+  subsets: ['latin'],
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt">
@@ -24,9 +24,8 @@ export default function RootLayout({
         <FilterContextProvider>
           <Header />
           {children}
-      </FilterContextProvider>
+        </FilterContextProvider>
       </body>
     </html>
-
-  )
+  );
 }

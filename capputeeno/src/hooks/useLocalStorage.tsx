@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export default function useLocalStorage<T>(item: string){
-
+export default function useLocalStorage<T>(item: string) {
   const storedValue = localStorage.getItem(item);
   const parsedValue = storedValue ? JSON.parse(storedValue) : '';
 
@@ -9,10 +8,10 @@ export default function useLocalStorage<T>(item: string){
   const postValue = (newValue: T) => {
     setValue(newValue);
     localStorage.setItem(item, JSON.stringify(newValue));
-  }
+  };
 
   return {
     value,
-    postValue
-  }
+    postValue,
+  };
 }

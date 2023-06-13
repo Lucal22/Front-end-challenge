@@ -2,7 +2,7 @@ import { theme } from '@/styles/theme';
 import styled, { css } from 'styled-components';
 
 interface SelectorStyleProps {
-  isClicked: boolean
+  isClicked: boolean;
 }
 
 export const Container = styled.div`
@@ -12,12 +12,12 @@ export const Container = styled.div`
 
 export const ProductFilter = styled.div<SelectorStyleProps>`
   ${({ isClicked }) => css`
-    p{
+    p {
       cursor: pointer;
-      font-weight: ${isClicked?`600`:`400`};
+      font-weight: ${isClicked ? `600` : `400`};
       font-size: 1.6rem;
-      color: ${isClicked?`${theme.colors.products}`:`${theme.colors.gray}`};
+      color: ${isClicked ? `${theme.colors.products}` : `${theme.colors.gray}`};
     }
-    border-bottom: ${isClicked?`solid 0.4rem ${theme.colors.orange}`: null};
-    `}
+    border-bottom: ${isClicked ? `solid 0.4rem ${theme.colors.orange}` : null};
+  `}
 `;

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import * as Styled from './styles';
@@ -8,9 +8,5 @@ export type ContainerProps = {
 };
 
 export default function Container({ children }: ContainerProps) {
-  return (
-    <Styled.Container>
-    {children}
-    </Styled.Container>
-  );
+  return <Styled.Container>{children}</Styled.Container>;
 }

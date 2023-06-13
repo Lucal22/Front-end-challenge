@@ -1,7 +1,7 @@
 export enum FilterTypes {
   'ALL',
   'SHIRT',
-  'MUG'
+  'MUG',
 }
 
 export enum FilterPriorityTypes {

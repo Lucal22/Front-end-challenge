@@ -3,10 +3,10 @@ export type Products = {
   name: string;
   image_url: string;
   price_in_cents: number;
-}
+};
 
 export type ProductsFetchResponse = {
-  data:{
-    allProducts: Products[]
-  }
-}
+  data: {
+    allProducts: Products[];
+  };
+};
