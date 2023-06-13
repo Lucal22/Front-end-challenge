@@ -4,8 +4,11 @@ import React from 'react';
 import * as Styled from './styles';
 
 import { Cart, Search } from '../Icons';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 export default function Header() {
+  const { value } = useLocalStorage('cart');
+
   return (
     <Styled.Header>
       <div>
@@ -20,7 +23,9 @@ export default function Header() {
         </Styled.Form>
         <Styled.Cart href='/cart'>
           <Cart />
-          <Styled.Counter>1</Styled.Counter>
+          {value.length>0 &&
+          <Styled.Counter>{value.length}</Styled.Counter>
+          }
         </Styled.Cart>
       </Styled.RightContent>
     </Styled.Header>
