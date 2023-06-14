@@ -6,6 +6,7 @@ export const theme = {
     title: '#5D5D6D',
     black: '#09090A',
     orange: '#FFA585',
+    border: '#DCE2E5',
   },
   fonts: {
     style: {

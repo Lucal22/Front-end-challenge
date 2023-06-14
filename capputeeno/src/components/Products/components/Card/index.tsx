@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from './styles';
 import { Products } from '@/types/products';
+import { useCentsToReal } from '@/hooks/useCentsToReal';
 
 export type CardProps = {
   id: string;
@@ -15,13 +16,14 @@ export default function Card({
   price_in_cents,
   image_url,
 }: Products) {
+  const price = useCentsToReal(price_in_cents);
   return (
     <Styled.Container>
       <Styled.Card href={`/${id}`}>
         <img src={image_url} alt={name} />
         <Styled.Description>
           <p>{name}</p>
-          <p>{price_in_cents}</p>
+          <p>R$ {price}</p>
         </Styled.Description>
       </Styled.Card>
     </Styled.Container>

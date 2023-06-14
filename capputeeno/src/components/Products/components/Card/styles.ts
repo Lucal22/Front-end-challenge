@@ -8,12 +8,12 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.a`
-  height: 37.8rem;
+  height: 100%;
   width: 25.6rem;
-  margin-bottom: 2.4rem;
 
   img {
     width: 100%;
+    height: 30rem;
   }
 `;
 
@@ -24,9 +24,17 @@ export const Description = styled.div`
   color: ${theme.colors.products};
   background-color: ${theme.background.white};
   padding: 0.8rem 1.2rem;
+  line-height: 150%;
+
+  p:nth-child(1) {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid ${theme.colors.border};
+  }
 
   p:nth-child(2) {
+    padding-top: 0.8rem;
     font-weight: 600;
     font-size: 1.4rem;
+    color: ${theme.colors.black};
   }
 `;
