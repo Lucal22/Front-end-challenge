@@ -10,6 +10,9 @@ export const Container = styled.div`
 export const Card = styled.a`
   height: 100%;
   width: 25.6rem;
+  border-radius: 0.8rem 0.8rem 0px 0px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
 
   img {
     width: 100%;
@@ -22,7 +25,6 @@ export const Description = styled.div`
   font-weight: 300;
   font-size: 1.6rem;
   color: ${theme.colors.products};
-  background-color: ${theme.background.white};
   padding: 0.8rem 1.2rem;
   line-height: 150%;
 

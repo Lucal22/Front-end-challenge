@@ -5,7 +5,7 @@ import Card from './components/Card';
 
 export default function Products() {
   const { data } = useProducts();
-  console.log(data);
+
   return (
     <Styled.Container>
       {data?.map((product) => {

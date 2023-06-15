@@ -33,5 +33,6 @@ export const DropMenu = styled.ul<OrganizerStyleProps>`
     background-color: ${theme.background.white};
     line-height: 22px;
     list-style: none;
+    z-index: 1;
   `}
 `;

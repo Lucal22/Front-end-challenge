@@ -8,6 +8,11 @@ export default function Priority() {
   const [isOpen, setIsOpen] = useState(false);
   const { setPriority } = useFilter();
 
+  function handleClick(filter: FilterPriorityTypes) {
+    setPriority(filter);
+    setIsOpen(!isOpen);
+  }
+
   return (
     <Styled.Container>
       <Styled.Button onClick={() => setIsOpen(!isOpen)}>
@@ -15,14 +20,14 @@ export default function Priority() {
         <ArrowDown />
       </Styled.Button>
       <Styled.DropMenu isOpen={isOpen}>
-        <li onClick={() => setPriority(FilterPriorityTypes.NEW)}>Novidades</li>
-        <li onClick={() => setPriority(FilterPriorityTypes.BIGGEST_PRICE)}>
+        <li onClick={() => handleClick(FilterPriorityTypes.NEW)}>Novidades</li>
+        <li onClick={() => handleClick(FilterPriorityTypes.BIGGEST_PRICE)}>
           Preço: Maior - menor
         </li>
-        <li onClick={() => setPriority(FilterPriorityTypes.MINOR_PRICE)}>
+        <li onClick={() => handleClick(FilterPriorityTypes.MINOR_PRICE)}>
           Preço: Menor - maior
         </li>
-        <li onClick={() => setPriority(FilterPriorityTypes.POPULARITY)}>
+        <li onClick={() => handleClick(FilterPriorityTypes.POPULARITY)}>
           Mais vendidos
         </li>
       </Styled.DropMenu>
