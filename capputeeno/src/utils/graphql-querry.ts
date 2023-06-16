@@ -34,13 +34,11 @@ export const filterQuery = (
     }
     `;
   }
-  const categoryFilter = getCategory(type) !== '';
+  const categoryFilter = getCategory(type);
   return ` query{
-    allProducts(${
-      categoryFilter ? `filter: {category: "${getCategory(type)}"},` : null
-    } sortField: "${getPriority(priority)?.field}" sortOrder: "${
+    allProducts(sortField: "${getPriority(priority)?.field}" sortOrder: "${
     getPriority(priority)?.order
-  }"){
+  }", ${categoryFilter ? `filter: {category: "${getCategory(type)}"}` : ''}){
       id
       name
       price_in_cents
