@@ -1,24 +1,34 @@
 'use client';
 
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import * as Styled from './styles';
 
 import { Cart, Search } from '../Icons';
 import useLocalStorage from '@/hooks/useLocalStorage';
+import { useFilter } from '@/hooks/useFilter';
 
 export default function Header() {
   const { value } = useLocalStorage('cart');
+  const { setSearch, search } = useFilter();
+
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    setSearch(e.target.value);
+  }
 
   return (
     <Styled.Header>
       <div>
-        <Styled.Logo className={Styled.sairaStencil.className}>
+        <Styled.Logo href="/" className={Styled.sairaStencil.className}>
           capputeeno
         </Styled.Logo>
       </div>
       <Styled.RightContent>
         <Styled.Form>
-          <Styled.Search placeholder="Procurando por algo específico?" />
+          <Styled.Search
+            value={search}
+            onChange={handleChange}
+            placeholder="Procurando por algo específico?"
+          />
           <Styled.Button aria-label="Search for item">
             <Search />
           </Styled.Button>
