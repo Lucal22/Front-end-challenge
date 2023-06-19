@@ -48,3 +48,19 @@ export const filterQuery = (
   }
   `;
 };
+
+export const filterProductQuery = (id: string) => {
+  return `
+    query{
+      allProducts(filter: {id: "${id}"}){
+        id
+        name
+        price_in_cents
+        category
+        description
+        image_url
+      }
+    }
+
+    `;
+};

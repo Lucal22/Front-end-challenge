@@ -2,29 +2,15 @@ export const theme = {
   colors: {
     white: '#ffffff',
     gray: '#737380',
+    light: '#F5F5FA',
     products: '#41414D',
     title: '#5D5D6D',
     black: '#09090A',
     orange: '#FFA585',
     border: '#DCE2E5',
+    back: '#617480',
   },
-  fonts: {
-    style: {
-      defaultFont: "'DM Sans', sans-serif",
-      secondFont: "'Source Sans Pro', sans-serif",
-      titleFont: "'Mulish', sans-serif",
-    },
 
-    size: {
-      xSmall: '1.4rem',
-      small: '1.6rem',
-      medium: '1.8rem',
-      big: '2.4rem',
-      bigger: '2.9rem',
-      xBig: '3.2rem',
-      large: '4rem',
-    },
-  },
   screen: {
     size: {
       xSmall: '360px',
@@ -38,6 +24,7 @@ export const theme = {
     page: '#F5F8FA',
     white: '#ffffff',
     black: '#030303',
+    blue: '#115D8C',
     gray: '#6b7688',
     dark: '#18181b',
     red: '#DE3838',
