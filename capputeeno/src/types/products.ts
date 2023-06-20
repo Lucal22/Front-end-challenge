@@ -12,3 +12,9 @@ export type ProductsFetchResponse = {
     allProducts: Products[];
   };
 };
+
+export type ProductFetchResponse = {
+  data: {
+    Product: Products;
+  };
+};

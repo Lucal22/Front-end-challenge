@@ -1,11 +1,11 @@
 import axios, { AxiosPromise } from 'axios';
 import { useQuery } from 'react-query';
 import { filterProductQuery } from '@/utils/graphql-querry';
-import { ProductsFetchResponse } from '@/types/products';
+import { ProductFetchResponse } from '@/types/products';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
-const fetch = (query: string): AxiosPromise<ProductsFetchResponse> => {
+const fetch = (query: string): AxiosPromise<ProductFetchResponse> => {
   return axios.post(API_URL, { query });
 };
 
@@ -13,10 +13,11 @@ export default function useProductById(id: string) {
   const query = filterProductQuery(id);
   const { data } = useQuery({
     queryFn: () => fetch(query),
-    queryKey: ['product'],
+    queryKey: ['product', id],
+    enabled: !!id,
   });
 
   return {
-    data: data?.data?.data?.allProducts,
+    data: data?.data?.data?.Product,
   };
 }

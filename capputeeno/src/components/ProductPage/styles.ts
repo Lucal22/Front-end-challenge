@@ -84,6 +84,7 @@ export const ProductInfos = styled.div`
 export const CartAdd = styled.button`
   position: absolute;
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   gap: 1.2rem;

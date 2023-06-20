@@ -52,7 +52,7 @@ export const filterQuery = (
 export const filterProductQuery = (id: string) => {
   return `
     query{
-      allProducts(filter: {id: "${id}"}){
+      Product(id: "${id}"){
         id
         name
         price_in_cents

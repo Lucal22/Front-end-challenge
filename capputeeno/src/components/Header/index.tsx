@@ -8,7 +8,7 @@ import useLocalStorage from '@/hooks/useLocalStorage';
 import { useFilter } from '@/hooks/useFilter';
 
 export default function Header() {
-  const { value } = useLocalStorage('cart', []);
+  const { value } = useLocalStorage('cart-items', []);
   const { setSearch, search } = useFilter();
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
