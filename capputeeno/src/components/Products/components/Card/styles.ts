@@ -13,6 +13,7 @@ export const Card = styled.a`
   border-radius: 0.8rem 0.8rem 0px 0px;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
+  cursor: pointer;
 
   img {
     width: 100%;

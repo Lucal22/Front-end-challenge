@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './styles';
 import { Products } from '@/types/products';
 import { centsToReal } from '@/utils/centsToReal';
+import { useRouter } from 'next/navigation';
 
 export type CardProps = {
   id: string;
@@ -16,10 +17,11 @@ export default function Card({
   price_in_cents,
   image_url,
 }: Products) {
+  const router = useRouter();
   const price = centsToReal(price_in_cents);
   return (
     <Styled.Container>
-      <Styled.Card href={`/${id}`}>
+      <Styled.Card onClick={() => router.push(`/${id}`)}>
         <img src={image_url} alt={name} />
         <Styled.Description>
           <p>{name}</p>

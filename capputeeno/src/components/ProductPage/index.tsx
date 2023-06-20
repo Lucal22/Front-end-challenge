@@ -27,7 +27,7 @@ export default function ProductPage({ id }: ProductPageProps) {
     return (
       <Styled.ProductDetails>
         <Container>
-          <Styled.Back href="/">
+          <Styled.Back onClick={() => router.push('/')}>
             <ArrowBack />
             <span>Voltar</span>
           </Styled.Back>

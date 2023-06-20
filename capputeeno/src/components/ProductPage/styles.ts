@@ -6,8 +6,11 @@ export const ProductDetails = styled.div`
   min-height: 100vh;
 `;
 
-export const Back = styled.a`
+export const Back = styled.button`
   display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
   align-items: center;
   gap: 0.8rem;
   padding-bottom: 2.2rem;
