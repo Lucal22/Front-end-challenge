@@ -1,6 +1,6 @@
 import { Saira } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
+import Header from '@/container/Header';
 import { FilterContextProvider } from '@/context/filter-context';
 
 export const metadata = {

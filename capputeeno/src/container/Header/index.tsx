@@ -3,7 +3,7 @@
 import React, { ChangeEvent } from 'react';
 import * as Styled from './styles';
 
-import { Cart, Search } from '../Icons';
+import { Cart, Search } from '../../components/Icons';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { useFilter } from '@/hooks/useFilter';
 

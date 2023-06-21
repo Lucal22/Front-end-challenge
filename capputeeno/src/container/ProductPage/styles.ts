@@ -22,6 +22,7 @@ export const Back = styled.button`
 
 export const ProductArea = styled.div`
   @media (min-width: 768px) {
+    padding-top: 4.4rem;
     display: flex;
     gap: 3.2rem;
   }

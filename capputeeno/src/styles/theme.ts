@@ -28,6 +28,7 @@ export const theme = {
     gray: '#6b7688',
     dark: '#18181b',
     red: '#DE3838',
+    green: '#51b853',
     transparent: 'rgba(255, 255, 255, 0.25)',
   },
 };

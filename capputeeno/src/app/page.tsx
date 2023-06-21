@@ -2,7 +2,7 @@
 
 import Container from '@/components/container';
 import Filters from '@/components/Filters';
-import Products from '@/components/Products';
+import Products from '@/container/Products';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 export default function Home() {

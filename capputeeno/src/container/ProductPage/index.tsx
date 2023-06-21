@@ -1,11 +1,12 @@
 import React from 'react';
 import * as Styled from './styles';
-import Container from '../container';
-import { ArrowBack, CartLight } from '../Icons';
+import Container from '../../components/container';
+import { CartLight } from '../../components/Icons';
 import useProductById from '@/hooks/useProductById';
 import { centsToReal } from '@/utils/centsToReal';
 import { useRouter } from 'next/navigation';
 import { productToCart } from '@/utils/productToCart';
+import Back from '@/components/BackArrow';
 
 type ProductPageProps = {
   id: string;
@@ -27,10 +28,7 @@ export default function ProductPage({ id }: ProductPageProps) {
     return (
       <Styled.ProductDetails>
         <Container>
-          <Styled.Back onClick={() => router.push('/')}>
-            <ArrowBack />
-            <span>Voltar</span>
-          </Styled.Back>
+          <Back />
           <Styled.ProductArea>
             <Styled.ProductImage>
               <img alt={data.name} src={data.image_url} />
