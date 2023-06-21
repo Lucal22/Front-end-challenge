@@ -4,7 +4,6 @@ import Container from '../../components/container';
 import { CartLight } from '../../components/Icons';
 import useProductById from '@/hooks/useProductById';
 import { centsToReal } from '@/utils/centsToReal';
-import { useRouter } from 'next/navigation';
 import { productToCart } from '@/utils/productToCart';
 import Back from '@/components/BackArrow';
 
@@ -13,13 +12,11 @@ type ProductPageProps = {
 };
 
 export default function ProductPage({ id }: ProductPageProps) {
-  const router = useRouter();
-
   const { data } = useProductById(id);
 
   function handleAddClick() {
     data ? productToCart(id, data) : null;
-    router.push('/');
+    location.href = '/';
   }
 
   if (data) {

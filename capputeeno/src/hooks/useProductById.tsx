@@ -15,6 +15,7 @@ export default function useProductById(id: string) {
     queryFn: () => fetch(query),
     queryKey: ['product', id],
     enabled: !!id,
+    staleTime: 1000 * 60 * 5,
   });
 
   return {

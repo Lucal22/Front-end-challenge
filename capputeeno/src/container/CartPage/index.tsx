@@ -4,8 +4,13 @@ import React from 'react';
 import * as Styled from './styles';
 import Container from '@/components/container';
 import Back from '@/components/BackArrow';
+import Card from './components/Card';
+import { Products } from '@/types/products';
 
 export default function CartPage() {
+  const cartItems = localStorage.getItem('cart-items');
+  const cartItemsArray = cartItems ? JSON.parse(cartItems) : '';
+
   return (
     <Container>
       <Back />
@@ -16,6 +21,19 @@ export default function CartPage() {
             {`Total (x produtos) `}
             <span>R$ xxx</span>
           </p>
+          {cartItemsArray.map((item: Products) => {
+            return (
+              <Card
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                img={item.image_url}
+                description={item.description as string}
+                qtd={item.quantity as number}
+                priceInCents={item.price_in_cents}
+              />
+            );
+          })}
         </Styled.CartItens>
         <Styled.BuyProducts>
           <h2>RESUMO DO PEDIDO</h2>

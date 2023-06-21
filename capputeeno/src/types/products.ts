@@ -5,6 +5,7 @@ export type Products = {
   price_in_cents: number;
   description?: string;
   category?: string;
+  quantity?: number;
 };
 
 export type ProductsFetchResponse = {
