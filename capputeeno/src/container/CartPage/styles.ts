@@ -1,5 +1,5 @@
 import { theme } from '@/styles/theme';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Flex = styled.div`
   display: grid;
@@ -80,17 +80,19 @@ export const Total = styled.div`
 `;
 
 export const Purchase = styled.button`
-  @media (min-width: 768px) {
-    width: 30.3rem;
-    height: 4.4rem;
-  }
-  cursor: pointer;
-  border: none;
-  background: ${theme.background.green};
-  mix-blend-mode: multiply;
-  border-radius: 0.4rem;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: ${theme.colors.light};
+  ${({ disabled }) => css`
+    @media (min-width: 768px) {
+      width: 30.3rem;
+      height: 4.4rem;
+    }
+    cursor: ${disabled ? 'default' : 'pointer'};
+    border: none;
+    background: ${disabled ? theme.background.gray : theme.background.green};
+    mix-blend-mode: multiply;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: ${theme.colors.light};
+  `}
 `;

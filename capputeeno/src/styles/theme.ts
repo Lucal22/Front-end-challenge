@@ -8,6 +8,7 @@ export const theme = {
     black: '#09090A',
     orange: '#FFA585',
     border: '#DCE2E5',
+    borderQtd: '#A8A8B3',
     back: '#617480',
   },
 
@@ -22,6 +23,7 @@ export const theme = {
   background: {
     search: '#F3F5F6',
     page: '#F5F8FA',
+    buttonQtd: '#F3F5F6',
     white: '#ffffff',
     black: '#030303',
     blue: '#115D8C',

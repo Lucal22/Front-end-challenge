@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './styles';
 import { centsToReal } from '@/utils/centsToReal';
-import { Trash } from '@/components/Icons';
+import { ArrowDown, Trash } from '@/components/Icons';
 import { Products } from '@/types/products';
 
 type CardProps = {
@@ -48,7 +48,10 @@ export default function Card({
         <h2>{name}</h2>
         <p>{description}</p>
         <Styled.ProductQtd>
-          <div>{qtd}</div>
+          <Styled.ButtonQtd>
+            <span>{qtd}</span>
+            <ArrowDown />
+          </Styled.ButtonQtd>
           <p>R$ {price}</p>
         </Styled.ProductQtd>
       </Styled.Informations>

@@ -55,10 +55,24 @@ export const ProductQtd = styled.div`
   bottom: 2.4rem;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   padding-right: 1.6rem;
   p {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 150%;
   }
+`;
+
+export const ButtonQtd = styled.button`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 6.5rem;
+  height: 4rem;
+  padding: 0.8rem 0.4rem 0.8rem 1.2rem;
+  background: ${theme.background.buttonQtd};
+  border-radius: 0.8rem;
+  border: 0.1rem solid ${theme.colors.borderQtd};
 `;
