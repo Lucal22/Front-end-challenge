@@ -64,7 +64,7 @@ export const ProductQtd = styled.div`
   }
 `;
 
-export const ButtonQtd = styled.button`
+export const SelectQtd = styled.select`
   display: flex;
   justify-content: space-between;
   align-items: center;
