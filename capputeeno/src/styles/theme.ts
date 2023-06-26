@@ -31,6 +31,7 @@ export const theme = {
     dark: '#18181b',
     red: '#DE3838',
     green: '#51b853',
+    pageButton: '#E9E9F0',
     transparent: 'rgba(255, 255, 255, 0.25)',
   },
 };
