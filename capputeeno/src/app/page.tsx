@@ -2,6 +2,7 @@
 
 import Container from '@/components/container';
 import Filters from '@/components/Filters';
+import Pagination from '@/components/Pagination';
 import Products from '@/container/Products';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -12,6 +13,7 @@ export default function Home() {
     <QueryClientProvider client={client}>
       <Container>
         <Filters />
+        <Pagination />
         <Products />
       </Container>
     </QueryClientProvider>
