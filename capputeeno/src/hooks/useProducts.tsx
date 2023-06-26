@@ -12,12 +12,12 @@ const fetch = (query: string): AxiosPromise<ProductsFetchResponse> => {
 };
 
 export default function useProducts() {
-  const { type, priority, search } = useFilter();
+  const { type, page, priority, search } = useFilter();
   const searchDeferred = useDeferredValue(search);
-  const query = filterQuery(type, priority);
+  const query = filterQuery(type, priority, page);
   const { data } = useQuery({
     queryFn: () => fetch(query),
-    queryKey: ['products', type, priority],
+    queryKey: ['products', type, priority, page],
   });
 
   const products = data?.data?.data?.allProducts;

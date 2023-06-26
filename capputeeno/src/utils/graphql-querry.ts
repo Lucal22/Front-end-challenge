@@ -22,10 +22,13 @@ export function getPriority(priority: FilterPriorityTypes) {
 export const filterQuery = (
   type: FilterTypes,
   priority: FilterPriorityTypes,
+  page: number,
 ) => {
   if (type === FilterTypes.ALL && priority === FilterPriorityTypes.POPULARITY) {
     return ` query{
-      allProducts(sortField: "sales" sortOrder: "DSC"){
+      allProducts(sortField: "sales", sortOrder: "DSC", ${
+        page ? `page:${page}, perPage:12` : ''
+      }){
         id
         name
         price_in_cents
@@ -36,9 +39,11 @@ export const filterQuery = (
   }
   const categoryFilter = getCategory(type);
   return ` query{
-    allProducts(sortField: "${getPriority(priority)?.field}" sortOrder: "${
-    getPriority(priority)?.order
-  }", ${categoryFilter ? `filter: {category: "${getCategory(type)}"}` : ''}){
+    allProducts(${page ? `page:${page} perPage:12` : ''} sortField: "${
+    getPriority(priority)?.field
+  }", sortOrder: "${getPriority(priority)?.order}", ${
+    categoryFilter ? `filter: {category: "${getCategory(type)}"}` : ''
+  }){
       id
       name
       price_in_cents
