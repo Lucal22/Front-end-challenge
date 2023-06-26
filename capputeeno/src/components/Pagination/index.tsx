@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './styles';
 import useProductCounter from '@/hooks/useProductCounter';
 import PageButton from './components/PageButton';
+import PageArrows from './components/PageArrows';
 
 export default function Pagination() {
   const { data } = useProductCounter();
@@ -11,6 +12,13 @@ export default function Pagination() {
       <PageButton key={index} number={index + 1} />
     ));
 
-    return <Styled.Container>{numberOfPages}</Styled.Container>;
+    return (
+      <Styled.Container>
+        <Styled.PageNumbers>{numberOfPages}</Styled.PageNumbers>
+        <Styled.PageArrows>
+          <PageArrows />
+        </Styled.PageArrows>
+      </Styled.Container>
+    );
   }
 }
