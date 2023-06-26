@@ -29,7 +29,7 @@ export default function CartPage() {
         <Styled.CartItens>
           <h2>SEU CARRINHO</h2>
           <p>
-            {`Total (x produtos) `}
+            {`Total (${cartItemsArray.length} produtos) `}
             <span>R$ {cartTotalPrice}</span>
           </p>
           {cartItemsArray
