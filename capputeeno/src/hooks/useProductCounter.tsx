@@ -11,7 +11,7 @@ const fetch = (query: string): AxiosPromise<ProductsFetchResponse> => {
   return axios.post(API_URL, { query });
 };
 
-export default function useProducts() {
+export default function useProductCounter() {
   const { type, priority, search } = useFilter();
   const searchDeferred = useDeferredValue(search);
   const query = filterQuery(type, priority, 0);
