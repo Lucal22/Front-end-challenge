@@ -16,13 +16,35 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.9rem 16rem;
+  padding: 1.9rem 2rem;
+  gap: 1rem;
+  @media (min-width: 1212px) {
+    padding: 1.9rem 16rem;
+  }
 `;
 
 export const Logo = styled.a`
-  font-size: 4rem;
-  color: ${theme.colors.title};
-  line-height: 6rem;
+  h1 {
+    display: none;
+    font-size: 2rem;
+    color: ${theme.colors.title};
+  }
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: ${theme.colors.title};
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      display: block;
+      font-size: 4rem;
+      line-height: 6rem;
+    }
+    svg {
+      display: none;
+    }
+  }
 `;
 
 export const RightContent = styled.div`
@@ -37,7 +59,7 @@ export const Form = styled.form`
 `;
 
 export const Search = styled.input`
-  width: 35.2rem;
+  width: 24rem;
   background-color: ${theme.background.search};
   padding: 1rem 4.5rem 1rem 1.6rem;
   color: ${theme.colors.gray};
@@ -45,6 +67,9 @@ export const Search = styled.input`
   border-radius: 0.8rem;
   font-family: inherit;
   font-size: 1.4rem;
+  @media (min-width: 480px) {
+    width: 35.2rem;
+  }
 `;
 
 export const Button = styled.button`

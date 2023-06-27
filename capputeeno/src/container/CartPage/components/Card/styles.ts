@@ -7,7 +7,7 @@ export const Container = styled.div`
   border-radius: 0.8rem;
   background-color: ${theme.background.white};
   font-family: inherit;
-  height: 21.1rem;
+  max-height: 21.1rem;
   margin-bottom: 1.6rem;
   p {
     padding: 0;
@@ -16,28 +16,41 @@ export const Container = styled.div`
 
 export const Img = styled.div`
   img {
-    width: 25.6rem;
-    height: 21.1rem;
+    width: 12.8rem;
     border-top-left-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
+    @media (min-width: 768px) {
+      width: 25.6rem;
+      height: 21.1rem;
+    }
   }
 `;
 
 export const Informations = styled.div`
   position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   padding: 1.6rem 1.6rem 2.4rem 0;
-
   font-weight: 300;
   line-height: 150%;
   color: ${theme.colors.products};
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 300;
     padding-bottom: 1.2rem;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
   p {
+    display: none;
     font-size: 1.2rem;
+    @media (min-width: 768px) {
+      display: block;
+      padding-bottom: 2.5rem;
+    }
   }
 `;
 
@@ -50,17 +63,20 @@ export const Trash = styled.button`
 `;
 
 export const ProductQtd = styled.div`
-  position: absolute;
   width: 100%;
-  bottom: 2.4rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-right: 1.6rem;
+  align-items: center;
   p {
-    font-size: 1.6rem;
+    display: block;
+    font-size: 1.2rem;
     font-weight: 600;
     line-height: 150%;
+    text-align: end;
+    padding: 0;
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
 `;
 

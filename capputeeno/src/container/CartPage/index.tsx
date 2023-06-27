@@ -49,23 +49,36 @@ export default function CartPage() {
             : null}
         </Styled.CartItens>
         <Styled.BuyProducts>
-          <h2>RESUMO DO PEDIDO</h2>
-          <Styled.SubTotal>
-            <p>Subtotal de produtos</p>
-            <p>R$ {cartTotalPrice}</p>
-          </Styled.SubTotal>
-          <Styled.Delivery>
-            <p>Entrega</p>
-            <p>R$ {centsToReal(delivery)}</p>
-          </Styled.Delivery>
-          <Styled.Line></Styled.Line>
-          <Styled.Total>
-            <p>Total</p>
-            <p>R$ {total}</p>
-          </Styled.Total>
-          <Styled.Purchase onClick={handlePurchase} disabled={disable}>
-            FINALIZAR COMPRA
-          </Styled.Purchase>
+          <div>
+            <h2>RESUMO DO PEDIDO</h2>
+            <Styled.SubTotal>
+              <p>Subtotal de produtos</p>
+              <p>R$ {cartTotalPrice}</p>
+            </Styled.SubTotal>
+            <Styled.Delivery>
+              <p>Entrega</p>
+              <p>R$ {centsToReal(delivery)}</p>
+            </Styled.Delivery>
+            <Styled.Line></Styled.Line>
+            <Styled.Total>
+              <p>Total</p>
+              <p>R$ {total}</p>
+            </Styled.Total>
+            <Styled.Purchase>
+              <Styled.PurchaseButton
+                onClick={handlePurchase}
+                disabled={disable}
+              >
+                FINALIZAR COMPRA
+              </Styled.PurchaseButton>
+            </Styled.Purchase>
+          </div>
+          <Styled.Links>
+            <a href="/">ajuda</a>
+            <a href="/">reembolso</a>
+            <a href="/">entregas e frete</a>
+            <a href="/">trocas e devoluções</a>
+          </Styled.Links>
         </Styled.BuyProducts>
       </Styled.Flex>
     </Container>

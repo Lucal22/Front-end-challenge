@@ -21,7 +21,7 @@ export const Back = styled.button`
 `;
 
 export const ProductArea = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 1212px) {
     padding-top: 4.4rem;
     display: flex;
     gap: 3.2rem;
@@ -29,9 +29,17 @@ export const ProductArea = styled.div`
 `;
 
 export const ProductImage = styled.figure`
-  @media (min-width: 768px) {
+  padding-top: 5rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  img {
+    width: 100%;
+  }
+  @media (min-width: 1212px) {
     width: 64rem;
     height: 58rem;
+    padding-top: 0;
 
     img {
       width: 64rem;
@@ -43,7 +51,9 @@ export const ProductImage = styled.figure`
 
 export const ProductInfos = styled.div`
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: inherit;
   font-style: normal;
   color: ${theme.colors.products};
@@ -82,11 +92,16 @@ export const ProductInfos = styled.div`
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 150%;
+    padding-bottom: 6rem;
+  }
+  div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const CartAdd = styled.button`
-  position: absolute;
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -95,7 +110,6 @@ export const CartAdd = styled.button`
   width: 43rem;
   height: 4.4rem;
   border-radius: 0.4rem;
-  bottom: 0;
   background-color: ${theme.background.blue};
   border: none;
   font-family: inherit;

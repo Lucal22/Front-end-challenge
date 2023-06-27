@@ -1,7 +1,7 @@
 import { theme } from '@/styles/theme';
 import styled, { css } from 'styled-components';
 
-interface OrganizerStyleProps {
+interface PriorityStyleProps {
   isOpen: boolean;
 }
 
@@ -18,10 +18,12 @@ export const Button = styled.button`
   background-color: transparent;
   gap: 0.8rem;
   align-items: center;
+  font-family: inherit;
+  font-size: 1.4rem;
   color: ${theme.colors.gray};
 `;
 
-export const DropMenu = styled.ul<OrganizerStyleProps>`
+export const DropMenu = styled.ul<PriorityStyleProps>`
   ${({ isOpen }) => css`
     display: ${isOpen ? 'block' : 'none'};
     cursor: pointer;

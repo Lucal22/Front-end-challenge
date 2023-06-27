@@ -3,7 +3,7 @@
 import React, { ChangeEvent } from 'react';
 import * as Styled from './styles';
 
-import { Cart, Search } from '../../components/Icons';
+import { Cart, CoffeIcon, Search } from '../../components/Icons';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { useFilter } from '@/hooks/useFilter';
 
@@ -19,7 +19,8 @@ export default function Header() {
     <Styled.Header>
       <div>
         <Styled.Logo href="/" className={Styled.sairaStencil.className}>
-          capputeeno
+          <h1>CAPPUTEENO</h1>
+          <CoffeIcon />
         </Styled.Logo>
       </div>
       <Styled.RightContent>
