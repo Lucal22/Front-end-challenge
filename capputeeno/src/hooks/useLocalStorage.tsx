@@ -4,7 +4,7 @@ export default function useLocalStorage<T>(item: string, initialValue: T) {
   const [value, setValue] = useState<T>(initialValue);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof localStorage !== 'undefined') {
       const value = localStorage.getItem(item);
       if (value) setValue(JSON.parse(value));
     }

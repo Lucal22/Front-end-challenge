@@ -10,7 +10,7 @@ import { cartPrice } from '@/utils/cartPrice';
 import { centsToReal } from '@/utils/centsToReal';
 
 export default function CartPage() {
-  const cartItems = localStorage.getItem('cart-items');
+  const cartItems = localStorage ? localStorage.getItem('cart-items') : '';
   const cartItemsArray = cartItems ? JSON.parse(cartItems) : '';
   const cartTotalPrice = centsToReal(cartPrice());
   const delivery = cartPrice() > 90000 || cartPrice() === 0 ? 0 : 4000;
@@ -29,7 +29,11 @@ export default function CartPage() {
         <Styled.CartItens>
           <h2>SEU CARRINHO</h2>
           <p>
-            {`Total (${cartItemsArray.length} produtos) `}
+            {`Total (${
+              cartItemsArray
+                ? `${cartItemsArray.length} produtos`
+                : `0 produtos`
+            }) `}
             <span>R$ {cartTotalPrice}</span>
           </p>
           {cartItemsArray
