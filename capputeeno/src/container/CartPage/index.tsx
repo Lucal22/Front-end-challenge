@@ -10,8 +10,13 @@ import { cartPrice } from '@/utils/cartPrice';
 import { centsToReal } from '@/utils/centsToReal';
 
 export default function CartPage() {
-  const cartItems = localStorage ? localStorage.getItem('cart-items') : '';
-  const cartItemsArray = cartItems ? JSON.parse(cartItems) : '';
+  let cartItems = '';
+  let cartItemsArray = [];
+
+  if (typeof localStorage !== 'undefined') {
+    cartItems = localStorage.getItem('cart-items') as string;
+    cartItemsArray = cartItems ? JSON.parse(cartItems) : '';
+  }
   const cartTotalPrice = centsToReal(cartPrice());
   const delivery = cartPrice() > 90000 || cartPrice() === 0 ? 0 : 4000;
   const total = centsToReal(cartPrice() + delivery);
