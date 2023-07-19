@@ -8,6 +8,7 @@ import Card from './components/Card';
 import { Products } from '@/types/products';
 import { cartPrice } from '@/utils/cartPrice';
 import { centsToReal } from '@/utils/centsToReal';
+import Link from 'next/link';
 
 export default function CartPage() {
   let cartItems = '';
@@ -83,10 +84,10 @@ export default function CartPage() {
             </Styled.Purchase>
           </div>
           <Styled.Links>
-            <a href="/">ajuda</a>
-            <a href="/">reembolso</a>
-            <a href="/">entregas e frete</a>
-            <a href="/">trocas e devoluções</a>
+            <Link href="/">ajuda</Link>
+            <Link href="/">reembolso</Link>
+            <Link href="/">entregas e frete</Link>
+            <Link href="/">trocas e devoluções</Link>
           </Styled.Links>
         </Styled.BuyProducts>
       </Styled.Flex>

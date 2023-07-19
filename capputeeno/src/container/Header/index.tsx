@@ -6,6 +6,7 @@ import * as Styled from './styles';
 import { Cart, CoffeIcon, Search } from '../../components/Icons';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { useFilter } from '@/hooks/useFilter';
+import Link from 'next/link';
 
 export default function Header() {
   const { value } = useLocalStorage('cart-items', []);
@@ -17,12 +18,12 @@ export default function Header() {
 
   return (
     <Styled.Header>
-      <div>
-        <Styled.Logo href="/" className={Styled.sairaStencil.className}>
+      <Styled.Logo>
+        <Link href="/" className={Styled.sairaStencil.className}>
           <h1>CAPPUTEENO</h1>
           <CoffeIcon />
-        </Styled.Logo>
-      </div>
+        </Link>
+      </Styled.Logo>
       <Styled.RightContent>
         <Styled.Form>
           <Styled.Search
@@ -34,9 +35,13 @@ export default function Header() {
             <Search />
           </Styled.Button>
         </Styled.Form>
-        <Styled.Cart href="/cart">
-          <Cart />
-          {value.length > 0 && <Styled.Counter>{value.length}</Styled.Counter>}
+        <Styled.Cart>
+          <Link href="/cart">
+            <Cart />
+            {value.length > 0 && (
+              <Styled.Counter>{value.length}</Styled.Counter>
+            )}
+          </Link>
         </Styled.Cart>
       </Styled.RightContent>
     </Styled.Header>
