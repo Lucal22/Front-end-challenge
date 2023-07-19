@@ -23,7 +23,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
   h1 {
     display: none;
     font-size: 2rem;
@@ -81,7 +81,7 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Cart = styled.a`
+export const Cart = styled.div`
   position: relative;
 `;
 
